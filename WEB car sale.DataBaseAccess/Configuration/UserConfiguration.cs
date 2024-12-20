@@ -18,8 +18,9 @@ namespace WEB_car_sale.DataBaseAccess.Configuration
             builder.HasKey(u => u.Id);
             builder.Property(u => u.FirsName).HasMaxLength(User.MAX_FIRSTNAME_LENGTH).IsRequired();
             builder.Property(u=>u.SecondName).HasMaxLength(User.MAX_SECONDNAME_LENGTH).IsRequired();
-            builder.Property(u => u.NumberPhone).IsRequired();
             builder.Property(u=>u.Email).IsRequired();
+            builder.Property(u=>u.PasswordHash).IsRequired();
+            builder.Property(u => u.NumberPhone).IsRequired();
             builder.Property(u=>u.CreatedBy).IsRequired();
         }
     }

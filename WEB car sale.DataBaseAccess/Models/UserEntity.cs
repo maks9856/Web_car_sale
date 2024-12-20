@@ -12,6 +12,7 @@ namespace WEB_car_sale.DataBaseAccess.Models
         public string FirsName { get; set; } = string.Empty;
         public string SecondName { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
+        public string PasswordHash { get; set; } = string.Empty;
         public string NumberPhone { get; set; } = string.Empty;
         public DateTime CreatedBy { get; set; } = DateTime.UtcNow;
     }

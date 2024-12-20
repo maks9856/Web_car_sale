@@ -8,6 +8,6 @@ namespace WEB_car_sale.Core.Interfaces
 {
     public interface IUserRepository
     {
-
+        
     }
 }
