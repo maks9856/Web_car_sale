@@ -13,11 +13,12 @@ namespace WEB_car_sale.Core.Models
         private const int MAX_FIRSTNAME_LENGTH = 250;
         private const int MAX_SECONDNAME_LENGTH = 250;
 
-        private User (Guid id, string firsName, string secondName, string email, DateTime createdBy)
+        private User (Guid id, string firsName, string secondName,string numberPhone, string email, DateTime createdBy)
         {
             Id = id;
             FirsName = firsName;
             SecondName = secondName;
+            NumberPhone = numberPhone;
             Email = email;
             CreatedBy = createdBy;
         }
@@ -26,9 +27,10 @@ namespace WEB_car_sale.Core.Models
         public string FirsName { get; set; } = string.Empty;
         public string SecondName { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
+        public string NumberPhone { get; set; } = string.Empty;
         public DateTime CreatedBy { get; set; } = DateTime.UtcNow;
 
-        public static User CreateUser(Guid id, string firsName, string secondName, string email, DateTime createdBy)
+        public static User CreateUser(Guid id, string firsName, string secondName,string numberPhone, string email, DateTime createdBy)
         {
             if (string.IsNullOrEmpty(firsName))
             {
@@ -48,16 +50,21 @@ namespace WEB_car_sale.Core.Models
             {
                 throw new UsersErrors($"Прізвище не повине перевищувати {MAX_SECONDNAME_LENGTH}");
             }
+            if (string.IsNullOrEmpty(numberPhone))
+            {
+
+                throw new UsersErrors("Заповніть поле прізвище");
+            }
             if (string.IsNullOrEmpty(email))
             {
-                throw new UsersErrors("Заповніть поле Email");
+                throw new UsersErrors("Заповніть поле телефон");
             }
             if (EmailValidation(email))
             {
                 throw new UsersErrors("Неправильно введений Email");
             }
 
-            var user = new User(id, firsName, secondName, email, createdBy);
+            var user = new User(id, firsName, secondName,numberPhone, email, createdBy);
             return user;
         }
 
