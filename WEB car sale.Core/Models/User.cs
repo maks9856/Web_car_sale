@@ -10,8 +10,8 @@ namespace WEB_car_sale.Core.Models
 {
     public class User
     {
-        private const int MAX_FIRSTNAME_LENGTH = 250;
-        private const int MAX_SECONDNAME_LENGTH = 250;
+        public const int MAX_FIRSTNAME_LENGTH = 250;
+        public const int MAX_SECONDNAME_LENGTH = 250;
 
         private User (Guid id, string firsName, string secondName,string numberPhone, string email, DateTime createdBy)
         {
